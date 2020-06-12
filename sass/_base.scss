@@ -1,0 +1,83 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+
+
+///breakpoits
+
+$bp-largest:62.5em;
+$bp-large:53.5em;
+$bp-medium:39em;
+
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @media  only screen and (max-width:$bp-largest){
+        
+        font-size:50%;
+    }
+    @media  only screen and (max-width:$bp-medium){
+        
+        font-size:37.5%;
+    }
+}
+body{
+    font-family:$font-primary;
+   
+    line-height: 1.6;
+
+}
+.container{
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3,min-content);
+
+
+    grid-template-columns: 8rem [full-start] minmax(4rem,1fr) [center-start]repeat(8,[col-start]
+     minmax(min-content,14rem)[col-end])[center-end] minmax(4rem,1fr) [full-end];
+
+
+
+     ///we added 1fr around 8 col to make them in center and also st some points we also use these 1fr cols ,like
+     /// in footer etc.
+
+
+
+        @media  only screen and (max-width:$bp-large){
+
+            grid-template-rows: 7rem 80vh min-content 40vw repeat(3,min-content);
+
+
+            grid-template-columns: [full-start] minmax(4rem,1fr) [center-start]repeat(8,[col-start]
+            minmax(min-content,14rem)[col-end])[center-end] minmax(4rem,1fr) [full-end];
+
+        
+        }
+
+        @media  only screen and (max-width:$bp-medium){
+            grid-template-rows: 7rem 70vh min-content 40vw repeat(3,min-content);
+        }
+
+}
